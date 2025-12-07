@@ -759,7 +759,7 @@ footer {
 }
 
 .hero-title .name.typing-active {
-    animation: typing-name 2s steps(14, end) forwards;
+    animation: typing-name 2.8s steps(14, end) forwards;
 }
 
 @keyframes typing-name {
@@ -767,7 +767,7 @@ footer {
         max-width: 0;
     }
     to {
-        max-width: 290px;
+        max-width: 380px;
     }
 }
 
