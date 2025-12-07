@@ -1,15 +1,18 @@
 var i = 0;
 var txt = 'Noor Joomratty'; /* The text */
-var speed = 50; /* The speed/duration of the effect in milliseconds */
+var speed = 150; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter() {
   if (i < txt.length) {
-    document.getElementsByClassName("name").innerHTML += txt.charAt(i);
+    document.getElementsByClassName("name")[0].innerHTML += txt.charAt(i);
     i++;
     setTimeout(typeWriter, speed);
   }
   console.log("Typing effect executed");
 }
+
+// Call typeWriter on page load
+document.addEventListener('DOMContentLoaded', typeWriter);
 
 // Intersection Observer for scroll animations
 const observerOptions = {
