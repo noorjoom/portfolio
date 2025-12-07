@@ -1,18 +1,15 @@
-// Typing animation for hero title
-document.addEventListener('DOMContentLoaded', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    const nameSpan = document.querySelector('.hero-title .name');
-    //const subtitleSpan = document.querySelector('.hero-title .subtitle-text');
-    
-    if (heroTitle && nameSpan) {
-        // Add typing class to enable caret
-        heroTitle.classList.add('typing');
-        
-        // Trigger typing animations
-        nameSpan.classList.add('typing-active');
-        //ubtitleSpan.classList.add('typing-active');
-    }
-});
+var i = 0;
+var txt = 'Noor Joomratty'; /* The text */
+var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementsByClassName("name").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+  console.log("Typing effect executed");
+}
 
 // Intersection Observer for scroll animations
 const observerOptions = {
