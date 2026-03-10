@@ -119,6 +119,14 @@ nav a:hover::after {
     width: 100%;
 }
 
+nav a.active {
+    color: var(--accent);
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
 /* Hero Section */
 .hero {
     padding: 6rem 0 8rem;
@@ -169,18 +177,6 @@ nav a:hover::after {
     }
     51%, 100% {
         opacity: 0;
-    }
-}
-
-/* Character reveal animation for smoother typing effect */
-@keyframes charReveal {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -771,5 +767,30 @@ footer {
     transform: translateY(0);
 }
 
+/* Project link hint */
+.project-link-hint {
+    display: block;
+    margin-top: 1rem;
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
+a.project-card:hover .project-link-hint {
+    opacity: 1;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+    .fade-in-section {
+        opacity: 1;
+        transform: none;
+    }
+}
 
