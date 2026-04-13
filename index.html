@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,269 +12,460 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Noor Joomratty - Software Developer">
     <meta name="twitter:description" content="Computer Science student and frontend-focused engineer based in Berlin. Building fast, user-centered web experiences.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23050507'/><text x='32' y='44' font-family='Arial,sans-serif' font-size='28' font-weight='800' fill='%2300f5a0' text-anchor='middle'>NJ</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#050507">
+
+    <!-- Fonts (preconnect reduces DNS + TLS handshake time) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Noor Joomratty",
+      "url": "https://noorjoom.github.io/",
+      "jobTitle": "Frontend Web Developer",
+      "worksFor": { "@type": "Organization", "name": "Strato GmbH" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Freie Universität Berlin" },
+      "knowsAbout": ["Python", "Java", "JavaScript", "Node.js", "PostgreSQL", "HTML", "CSS"],
+      "sameAs": [
+        "https://github.com/noorjoom",
+        "https://www.linkedin.com/in/noor-joomratty-9b2a49108/"
+      ]
+    }
+    </script>
+
+    <!-- Flash-of-wrong-theme prevention (must be inline, before CSS) -->
+    <script>
+      (function() {
+        var stored = localStorage.getItem('portfolio-theme');
+        if (stored === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+
     <link rel="stylesheet" href="styles.css">
+
+    <noscript>
+      <style>.typing-cursor { display: none; }</style>
+    </noscript>
 </head>
 <body>
-    <div class="bg-grid"></div>
+    <!-- Skip navigation (D1) -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+    <!-- Scroll progress bar (A7) -->
+    <div class="progress-bar" aria-hidden="true"></div>
+
+    <!-- Interactive background glow (A6) -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
 
     <div class="container">
-        <header>
+        <header aria-label="Site header">
             <div class="header-content">
-                <div class="logo">NJ</div>
-                <nav>
+                <div class="logo" aria-label="Noor Joomratty">NJ</div>
+
+                <!-- Hamburger toggle (A3) -->
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav id="primary-nav" aria-label="Primary navigation">
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
                     <a href="#projects">Projects</a>
                     <a href="#education">Education</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#contact-form">Contact</a>
                 </nav>
+
+                <!-- Theme toggle (A1) -->
+                <button class="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
             </div>
         </header>
 
-        <section class="hero" id="about">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="name">Noor Joomratty</span>
-                    <!-- <span class="subtitle-text">Full-Stack Web Developer</span> -->
-                    
-                </h1>
-                <p class="hero-subtitle"></p>
-                <p class="hero-description"></p>
-                <div class="contact-links">
-                    <a href="mailto:noor@joomratty.com" class="contact-link">
-                        <span>Email</span>
+        <main id="main-content">
+            <section class="hero" id="about" aria-label="About Noor Joomratty">
+                <div class="hero-content">
+                    <p class="hero-greeting">Hi, I'm</p>
+                    <h1 class="hero-title">
+                        <span class="name">Noor Joomratty</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        <span class="hero-role-prefix">a </span><span class="hero-role"></span><span class="typing-cursor cursor-blink">|</span>
+                    </p>
+                    <p class="hero-description">Building intelligent systems and full-stack applications with a passion for web development. Currently working as a Working Student - Frontend Web Developer at Strato GmbH, Berlin.</p>
+                    <div class="contact-links">
+                        <a href="mailto:noor@joomratty.com" class="contact-link">
+                            <span>Email</span>
+                        </a>
+                        <a href="https://github.com/noorjoom" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/noor-joomratty-9b2a49108/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="tel:+4917661418882" class="contact-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="contact-icon" aria-hidden="true"><path d="M14.05 6C15.0268 6.19057 15.9244 6.66826 16.6281 7.37194C17.3318 8.07561 17.8095 8.97326 18 9.95M14.05 2C16.0793 2.22544 17.9716 3.13417 19.4163 4.57701C20.8609 6.01984 21.7721 7.91101 22 9.94M18.5 21C9.93959 21 3 14.0604 3 5.5C3 5.11378 3.01413 4.73086 3.04189 4.35173C3.07375 3.91662 3.08968 3.69907 3.2037 3.50103C3.29814 3.33701 3.4655 3.18146 3.63598 3.09925C3.84181 3 4.08188 3 4.56201 3H7.37932C7.78308 3 7.98496 3 8.15802 3.06645C8.31089 3.12515 8.44701 3.22049 8.55442 3.3441C8.67601 3.48403 8.745 3.67376 8.88299 4.05321L10.0491 7.26005C10.2096 7.70153 10.2899 7.92227 10.2763 8.1317C10.2643 8.31637 10.2012 8.49408 10.0942 8.64506C9.97286 8.81628 9.77145 8.93713 9.36863 9.17882L8 10C9.2019 12.6489 11.3501 14.7999 14 16L14.8212 14.6314C15.0629 14.2285 15.1837 14.0271 15.3549 13.9058C15.5059 13.7988 15.6836 13.7357 15.8683 13.7237C16.0777 13.7101 16.2985 13.7904 16.74 13.9509L19.9468 15.117C20.3262 15.255 20.516 15.324 20.6559 15.4456C20.7795 15.553 20.8749 15.6891 20.9335 15.842C21 16.015 21 16.2169 21 16.6207V19.438C21 19.9181 21 20.1582 20.9007 20.364C20.8185 20.5345 20.663 20.7019 20.499 20.7963C20.3009 20.9103 20.0834 20.9262 19.6483 20.9581C19.2691 20.9859 18.8862 21 18.5 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span class="sr-only">Call Noor</span>
+                        </a>
+                        <!-- B2: CV Download -->
+                        <a href="assets/cv-noor-joomratty.pdf" download class="contact-link contact-link--cv" aria-label="Download CV (PDF)">
+                            <span>Download CV</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="fade-in-section" aria-label="Technical Skills">
+                <div class="section-header">
+                    <span class="section-number" aria-hidden="true">I</span>
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="section-line" aria-hidden="true"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-tags">
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">Python</span>
+                                <div class="skill-bar" aria-label="Python proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">Java</span>
+                                <div class="skill-bar" aria-label="Java proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">C</span>
+                                <div class="skill-bar" aria-label="C proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">Haskell</span>
+                                <div class="skill-bar" aria-label="Haskell proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="60"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">HTML/CSS/JS</span>
+                                <div class="skill-bar" aria-label="HTML/CSS/JS proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">x86-64 Assembly</span>
+                                <div class="skill-bar" aria-label="x86-64 Assembly proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="55"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks & Tools</h3>
+                        <div class="skill-tags">
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">Node.js</span>
+                                <div class="skill-bar" aria-label="Node.js proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">Express</span>
+                                <div class="skill-bar" aria-label="Express proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">PostgreSQL</span>
+                                <div class="skill-bar" aria-label="PostgreSQL proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="72"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">Git</span>
+                                <div class="skill-bar" aria-label="Git proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">Docker</span>
+                                <div class="skill-bar" aria-label="Docker proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="65"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">PyTorch</span>
+                                <div class="skill-bar" aria-label="PyTorch proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="60"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">Pandas</span>
+                                <div class="skill-bar" aria-label="Pandas proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tag-row">
+                                <span class="skill-tag">NumPy</span>
+                                <div class="skill-bar" aria-label="NumPy proficiency">
+                                    <div class="skill-bar-fill" data-proficiency="70"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Core Concepts</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Database Design</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">Backend Development</span>
+                            <span class="skill-tag">LLM Fine-tuning</span>
+                            <span class="skill-tag">System Programming</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- B6: Timeline layout for Work Experience -->
+            <section id="experience" class="fade-in-section" aria-label="Work Experience">
+                <div class="section-header">
+                    <span class="section-number" aria-hidden="true">II</span>
+                    <h2 class="section-title">Work Experience</h2>
+                    <div class="section-line" aria-hidden="true"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3 class="project-title">Working Student - Frontend Web Developer</h3>
+                                <span class="project-date">Sep 2025 - Present</span>
+                            </div>
+                            <p class="project-company">Strato GmbH, Berlin</p>
+                            <p class="project-tech">HTML • JavaScript • Git • Strapi5 • Bootstrap CSS • Kameleoon • 11ty • Figma</p>
+                            <ul class="project-description">
+                                <li>Working on the frontend of the Strato website (Shop)</li>
+                                <li>Designing and developing A/B tests for the website using Kameleoon</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="fade-in-section" aria-label="Projects and Experience">
+                <div class="section-header">
+                    <span class="section-number" aria-hidden="true">III</span>
+                    <h2 class="section-title">Projects & Experience</h2>
+                    <div class="section-line" aria-hidden="true"></div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">AI Chatbot Trainer</h3>
+                            <span class="project-date">Oct 2023 – Mar 2024</span>
+                        </div>
+                        <p class="project-company">Projektron GmbH, Berlin</p>
+                        <p class="project-tech">Python • PyTorch • Hugging Face • Git</p>
+                        <ul class="project-description">
+                            <li>Fine-tuned large language models on custom datasets to simulate domain-specific conversations</li>
+                            <li>Developed a CLI-based interface for testing and evaluating model outputs</li>
+                            <li>Optimized model performance for specialized business use cases</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://noorjoom.github.io/bike-theft-visualisation/" target="_blank" rel="noopener noreferrer" class="project-card" aria-label="Full-Stack Web Applications — view live project">
+                        <div class="project-header">
+                            <h3 class="project-title">Full-Stack Web Applications</h3>
+                            <span class="project-date">July 2023 – Oct 2023</span>
+                        </div>
+                        <p class="project-company">Freie Universität Berlin</p>
+                        <p class="project-tech">HTML • CSS • JavaScript • Node.js • PostgreSQL</p>
+                        <ul class="project-description">
+                            <li>Created a task management application with RESTful API backend and responsive UI</li>
+                            <li>Developed a data visualization web app for analyzing stolen bicycle statistics in Berlin districts</li>
+                            <li>Implemented custom database backend and dynamic frontend for real-time data display</li>
+                            <span class="project-link-hint">View project →</span>
+                        </ul>
                     </a>
-                    <a href="https://github.com/noorjoom" target="_blank" class="contact-link">
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/noor-joomratty-9b2a49108/" target="_blank" class="contact-link">
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="tel:+4917661418882" class="contact-link">
-                        <img src="assets/phone.svg" alt="Call Noor" class="contact-icon" />
-                        <span class="sr-only">Call Noor</span>
-                    </a>
-                </div>
-            </div>
-        </section>
 
-        <section id="skills" class="fade-in-section">
-            <div class="section-header">
-                <span class="section-number">I</span>
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">C</span>
-                        <span class="skill-tag">Haskell</span>
-                        <span class="skill-tag">HTML/CSS/JS</span>
-                        <span class="skill-tag">x86-64 Assembly</span>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Low-Level Programming</h3>
+                            <span class="project-date">Oct 2024 – Apr 2025</span>
+                        </div>
+                        <p class="project-company">Freie Universität Berlin</p>
+                        <p class="project-tech">NASM x86-64 Assembly</p>
+                        <ul class="project-description">
+                            <li>Developed algorithms and system-related applications using x86-64 assembly language</li>
+                            <li>Gained deep understanding of computer architecture and low-level optimization</li>
+                            <li>Implemented efficient data structures and algorithms at the assembly level</li>
+                        </ul>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Frameworks & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Core Concepts</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Database Design</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">Backend Development</span>
-                        <span class="skill-tag">LLM Fine-tuning</span>
-                        <span class="skill-tag">System Programming</span>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section id="experience" class="fade-in-section">
-            <div class="section-header">
-                <span class="section-number">II</span>
-                <h2 class="section-title">Work Experience</h2>
-                <div class="section-line"></div>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Working Student - Frontend Web Developer</h3>
-                        <span class="project-date">Sep 2025 - Present</span>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">The Odin Project</h3>
+                            <span class="project-date">Dec 2022 – June 2023</span>
+                        </div>
+                        <p class="project-company">Personal Project</p>
+                        <p class="project-tech">HTML • CSS • JavaScript • Node.js</p>
+                        <ul class="project-description">
+                            <li>Completed comprehensive online curriculum for full-stack web development</li>
+                            <li>Built multiple projects demonstrating proficiency in frontend and backend technologies</li>
+                            <li>Mastered modern web development practices and design patterns</li>
+                        </ul>
                     </div>
-                    <p class="project-company">Strato GmbH, Berlin</p>
-                    <p class="project-tech">HTML • JavaScript • Git • Strapi5 • Bootstrap CSS • Kameleoon • 11ty • Figma</p>
-                    <ul class="project-description">
-                        <li>Working on the frontend of the Strato website (Shop)</li>
-                        <li>Designing and developing A/B tests for the website using Kameleoon</li>
-                    </ul>
                 </div>
-            </div>
+            </section>
 
-        </section>
+            <!-- B6: Timeline layout for Education -->
+            <section id="education" class="fade-in-section" aria-label="Education">
+                <div class="section-header">
+                    <span class="section-number" aria-hidden="true">IV</span>
+                    <h2 class="section-title">Education</h2>
+                    <div class="section-line" aria-hidden="true"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="education-card">
+                            <div class="education-info">
+                                <h3>Freie Universität Berlin</h3>
+                                <p class="education-degree">B.Sc. Informatik (Computer Science)</p>
+                            </div>
+                            <div class="education-meta">
+                                <p class="education-location">Berlin, Germany</p>
+                                <p class="education-period">2021 – Present</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <section id="projects" class="fade-in-section">
-            <div class="section-header">
-                <span class="section-number">III</span>
-                <h2 class="section-title">Projects & Experience</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">AI Chatbot Trainer</h3>
-                        <span class="project-date">Oct 2023 – Mar 2024</span>
+                    <div class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="education-card">
+                            <div class="education-info">
+                                <h3>Sir Leckraz Teelock SSS</h3>
+                                <p class="education-degree">Cambridge A-Level</p>
+                                <p class="education-details">
+                                    Mathematics, Physics, Chemistry (GPA: 1.6)<br>
+                                    <strong>Achievements:</strong> Math Olympiad Finalist (Mauritius), MUN Delegate, National English Reading Competition Finalist
+                                </p>
+                            </div>
+                            <div class="education-meta">
+                                <p class="education-location">Mauritius</p>
+                                <p class="education-period">2017 – 2018</p>
+                            </div>
+                        </div>
                     </div>
-                    <p class="project-company">Projektron GmbH, Berlin</p>
-                    <p class="project-tech">Python • PyTorch • Hugging Face • Git</p>
-                    <ul class="project-description">
-                        <li>Fine-tuned large language models on custom datasets to simulate domain-specific conversations</li>
-                        <li>Developed a CLI-based interface for testing and evaluating model outputs</li>
-                        <li>Optimized model performance for specialized business use cases</li>
-                    </ul>
-                </div>
 
-                <a href="https://noorjoom.github.io/bike-theft-visualisation/" target="_blank" class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Full-Stack Web Applications</h3>
-                        <span class="project-date">July 2023 – Oct 2023</span>
+                    <div class="timeline-item">
+                        <div class="timeline-dot" aria-hidden="true"></div>
+                        <div class="education-card">
+                            <div class="education-info">
+                                <h3>Sir Leckraz Teelock SSS</h3>
+                                <p class="education-degree">Cambridge O-Level</p>
+                                <p class="education-details">Natural Sciences (GPA: 1.8)</p>
+                            </div>
+                            <div class="education-meta">
+                                <p class="education-location">Mauritius</p>
+                                <p class="education-period">2015 – 2016</p>
+                            </div>
+                        </div>
                     </div>
-                    <p class="project-company">Freie Universität Berlin</p>
-                    <p class="project-tech">HTML • CSS • JavaScript • Node.js • PostgreSQL</p>
-                    <ul class="project-description">
-                        <li>Created a task management application with RESTful API backend and responsive UI</li>
-                        <li>Developed a data visualization web app for analyzing stolen bicycle statistics in Berlin districts</li>
-                        <li>Implemented custom database backend and dynamic frontend for real-time data display</li>
-                        <span class="project-link-hint">View project →</span>
-                    </ul>
-                </a>
+                </div>
+            </section>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">Low-Level Programming</h3>
-                        <span class="project-date">Oct 2024 – Apr 2025</span>
-                    </div>
-                    <p class="project-company">Freie Universität Berlin</p>
-                    <p class="project-tech">NASM x86-64 Assembly</p>
-                    <ul class="project-description">
-                        <li>Developed algorithms and system-related applications using x86-64 assembly language</li>
-                        <li>Gained deep understanding of computer architecture and low-level optimization</li>
-                        <li>Implemented efficient data structures and algorithms at the assembly level</li>
-                    </ul>
+            <section id="languages" class="fade-in-section" aria-label="Languages">
+                <div class="section-header">
+                    <span class="section-number" aria-hidden="true">V</span>
+                    <h2 class="section-title">Languages</h2>
+                    <div class="section-line" aria-hidden="true"></div>
                 </div>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <span class="language-name">English</span>
+                        <span class="language-level">C2</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">French</span>
+                        <span class="language-level">C2</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">German</span>
+                        <span class="language-level">C1</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Mauritian Creole</span>
+                        <span class="language-level">Native</span>
+                    </div>
+                </div>
+            </section>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3 class="project-title">The Odin Project</h3>
-                        <span class="project-date">Dec 2022 – June 2023</span>
-                    </div>
-                    <p class="project-company">Personal Project</p>
-                    <p class="project-tech">HTML • CSS • JavaScript • Node.js</p>
-                    <ul class="project-description">
-                        <li>Completed comprehensive online curriculum for full-stack web development</li>
-                        <li>Built multiple projects demonstrating proficiency in frontend and backend technologies</li>
-                        <li>Mastered modern web development practices and design patterns</li>
-                    </ul>
+            <!-- E1: Contact form -->
+            <section id="contact-form" class="fade-in-section" aria-label="Contact">
+                <div class="section-header">
+                    <span class="section-number" aria-hidden="true">VI</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-line" aria-hidden="true"></div>
                 </div>
-            </div>
-        </section>
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+                    <!-- Honeypot for spam prevention -->
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name" required autocomplete="name" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" name="email" required autocomplete="email" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="5" required placeholder="What's on your mind?"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+            </section>
+        </main>
 
-        <section id="education" class="fade-in-section">
-            <div class="section-header">
-                <span class="section-number">IV</span>
-                <h2 class="section-title">Education</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-info">
-                        <h3>Freie Universität Berlin</h3>
-                        <p class="education-degree">B.Sc. Informatik (Computer Science)</p>
-                    </div>
-                    <div class="education-meta">
-                        <p class="education-location">Berlin, Germany</p>
-                        <p class="education-period">2021 – Present</p>
-                    </div>
-                </div>
-
-                <div class="education-card">
-                    <div class="education-info">
-                        <h3>Sir Leckraz Teelock SSS</h3>
-                        <p class="education-degree">Cambridge A-Level</p>
-                        <p class="education-details">
-                            Mathematics, Physics, Chemistry (GPA: 1.6)<br>
-                            <strong>Achievements:</strong> Math Olympiad Finalist (Mauritius), MUN Delegate, National English Reading Competition Finalist
-                        </p>
-                    </div>
-                    <div class="education-meta">
-                        <p class="education-location">Mauritius</p>
-                        <p class="education-period">2017 – 2018</p>
-                    </div>
-                </div>
-
-                <div class="education-card">
-                    <div class="education-info">
-                        <h3>Sir Leckraz Teelock SSS</h3>
-                        <p class="education-degree">Cambridge O-Level</p>
-                        <p class="education-details">Natural Sciences (GPA: 1.8)</p>
-                    </div>
-                    <div class="education-meta">
-                        <p class="education-location">Mauritius</p>
-                        <p class="education-period">2015 – 2016</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="languages" class="fade-in-section">
-            <div class="section-header">
-                <span class="section-number">V</span>
-                <h2 class="section-title">Languages</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="languages-grid">
-                <div class="language-item">
-                    <span class="language-name">English</span>
-                    <span class="language-level">C2</span>
-                </div>
-                <div class="language-item">
-                    <span class="language-name">French</span>
-                    <span class="language-level">C2</span>
-                </div>
-                <div class="language-item">
-                    <span class="language-name">German</span>
-                    <span class="language-level">C1</span>
-                </div>
-                <div class="language-item">
-                    <span class="language-name">Mauritian Creole</span>
-                    <span class="language-level">Native</span>
-                </div>
-            </div>
-        </section>
-
-        <footer id="contact">
+        <footer id="contact" aria-label="Site footer">
             <div class="footer-links">
                 <a href="mailto:noor@joomratty.com" class="footer-link">Email</a>
-                <a href="https://github.com/noorjoom" target="_blank" class="footer-link">GitHub</a>
-                <a href="https://www.linkedin.com/in/noor-joomratty-9b2a49108/" target="_blank" class="footer-link">LinkedIn</a>
-                <a href="tel:+4917661418882" class="footer-link footer-phone-link">
-                    <img src="assets/phone.svg" alt="Call Noor" class="footer-phone-icon" />
+                <a href="https://github.com/noorjoom" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/noor-joomratty-9b2a49108/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+                <a href="tel:+4917661418882" class="footer-link footer-phone-link" aria-label="Call Noor">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="footer-phone-icon" aria-hidden="true"><path d="M14.05 6C15.0268 6.19057 15.9244 6.66826 16.6281 7.37194C17.3318 8.07561 17.8095 8.97326 18 9.95M14.05 2C16.0793 2.22544 17.9716 3.13417 19.4163 4.57701C20.8609 6.01984 21.7721 7.91101 22 9.94M18.5 21C9.93959 21 3 14.0604 3 5.5C3 5.11378 3.01413 4.73086 3.04189 4.35173C3.07375 3.91662 3.08968 3.69907 3.2037 3.50103C3.29814 3.33701 3.4655 3.18146 3.63598 3.09925C3.84181 3 4.08188 3 4.56201 3H7.37932C7.78308 3 7.98496 3 8.15802 3.06645C8.31089 3.12515 8.44701 3.22049 8.55442 3.3441C8.67601 3.48403 8.745 3.67376 8.88299 4.05321L10.0491 7.26005C10.2096 7.70153 10.2899 7.92227 10.2763 8.1317C10.2643 8.31637 10.2012 8.49408 10.0942 8.64506C9.97286 8.81628 9.77145 8.93713 9.36863 9.17882L8 10C9.2019 12.6489 11.3501 14.7999 14 16L14.8212 14.6314C15.0629 14.2285 15.1837 14.0271 15.3549 13.9058C15.5059 13.7988 15.6836 13.7357 15.8683 13.7237C16.0777 13.7101 16.2985 13.7904 16.74 13.9509L19.9468 15.117C20.3262 15.255 20.516 15.324 20.6559 15.4456C20.7795 15.553 20.8749 15.6891 20.9335 15.842C21 16.015 21 16.2169 21 16.6207V19.438C21 19.9181 21 20.1582 20.9007 20.364C20.8185 20.5345 20.663 20.7019 20.499 20.7963C20.3009 20.9103 20.0834 20.9262 19.6483 20.9581C19.2691 20.9859 18.8862 21 18.5 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     <span class="sr-only">Call Noor</span>
                 </a>
             </div>
@@ -284,6 +475,13 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Scroll-to-top button (A5) -->
+    <button class="scroll-top" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

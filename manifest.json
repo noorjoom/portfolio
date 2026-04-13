@@ -1,0 +1,16 @@
+{
+  "name": "Noor Joomratty - Portfolio",
+  "short_name": "NJ Portfolio",
+  "description": "Computer Science student and frontend-focused engineer based in Berlin.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050507",
+  "theme_color": "#050507",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

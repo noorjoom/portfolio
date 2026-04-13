@@ -1,0 +1,15 @@
+{
+  "name": "noor-portfolio",
+  "version": "1.0.0",
+  "description": "Noor Joomratty's personal portfolio website",
+  "scripts": {
+    "build:js": "esbuild js/main.js --bundle --minify --outfile=dist/main.min.js",
+    "build:css": "cleancss -o dist/styles.min.css styles.css",
+    "build": "npm run build:js && npm run build:css",
+    "dev": "echo 'Open index.html in your browser to develop locally.'"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "esbuild": "^0.24.2"
+  }
+}
