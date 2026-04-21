@@ -136,9 +136,16 @@
                             <span class="sr-only">Call Noor</span>
                         </a>
                         <!-- B2: CV Download -->
-                        <a href="assets/cv-noor-joomratty.pdf" download class="contact-link contact-link--cv" aria-label="Download CV (PDF)">
-                            <span>Download CV</span>
-                        </a>
+                        <div class="cv-download" data-cv-download>
+                            <button type="button" class="contact-link contact-link--cv" aria-haspopup="menu" aria-expanded="false" aria-label="Download CV (PDF)" data-cv-toggle>
+                                <span>Download CV</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="cv-chevron" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                            <ul class="cv-menu" role="menu" hidden>
+                                <li role="none"><a role="menuitem" href="assets/cv-noor-joomratty.pdf" download>English</a></li>
+                                <li role="none"><a role="menuitem" href="assets/cv-noor-joomratty-de.pdf" download>German</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -153,95 +160,25 @@
                     <div class="skill-category">
                         <h3>Programming Languages</h3>
                         <div class="skill-tags">
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">Python</span>
-                                <div class="skill-bar" aria-label="Python proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">Java</span>
-                                <div class="skill-bar" aria-label="Java proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="75"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">C</span>
-                                <div class="skill-bar" aria-label="C proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="70"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">Haskell</span>
-                                <div class="skill-bar" aria-label="Haskell proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="60"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">HTML/CSS/JS</span>
-                                <div class="skill-bar" aria-label="HTML/CSS/JS proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">x86-64 Assembly</span>
-                                <div class="skill-bar" aria-label="x86-64 Assembly proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="55"></div>
-                                </div>
-                            </div>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">Haskell</span>
+                            <span class="skill-tag">HTML/CSS/JS</span>
+                            <span class="skill-tag">x86-64 Assembly</span>
                         </div>
                     </div>
                     <div class="skill-category">
                         <h3>Frameworks & Tools</h3>
                         <div class="skill-tags">
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">Node.js</span>
-                                <div class="skill-bar" aria-label="Node.js proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="80"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">Express</span>
-                                <div class="skill-bar" aria-label="Express proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="75"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">PostgreSQL</span>
-                                <div class="skill-bar" aria-label="PostgreSQL proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="72"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">Git</span>
-                                <div class="skill-bar" aria-label="Git proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="85"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">Docker</span>
-                                <div class="skill-bar" aria-label="Docker proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="65"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">PyTorch</span>
-                                <div class="skill-bar" aria-label="PyTorch proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="60"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">Pandas</span>
-                                <div class="skill-bar" aria-label="Pandas proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="70"></div>
-                                </div>
-                            </div>
-                            <div class="skill-tag-row">
-                                <span class="skill-tag">NumPy</span>
-                                <div class="skill-bar" aria-label="NumPy proficiency">
-                                    <div class="skill-bar-fill" data-proficiency="70"></div>
-                                </div>
-                            </div>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
                         </div>
                     </div>
                     <div class="skill-category">
