@@ -5,9 +5,9 @@ import { initNav } from './nav.js';
 import { initHeader } from './header.js';
 import { initProgress } from './progress.js';
 import { initScrollTop } from './scroll-top.js';
-import { initSkillBars } from './skills.js';
 import { initBackground } from './background.js';
 import { initContactForm } from './contact.js';
+import { initCvDownload } from './cv-download.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initProgress();
   initScrollTop();
-  initSkillBars();
   initBackground();
   initContactForm();
+  initCvDownload();
 
   // Typing animation with a brief delay for visual polish
   setTimeout(initTypingAnimations, 300);
